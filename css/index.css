@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,html {
+    font-size:16px;
+    font-family: 'Pretendard';
+    color:#222;
+    letter-spacing:-.6px;
+
+    word-break:keep-all;
+    /* overflow-x:hidden; */
+    overflow: hidden;
+
+    -webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+@media (max-width:768px){body,html{font-size:12px}}
+
+.container {
+    width: 765px;
+    margin: 0 auto;
+}
+@media (max-width:768px){.container {width: 90vw}}
+
+.swiper-container{
+    height: 100vh;
+}
+
+.container section {
+    /* width: 100%; */
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+
+#section1-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 6rem 4rem 4rem 4rem 4rem;
+    grid-template-areas:
+        "title title"
+        "profileImg name"
+        "profileImg email"
+        "profileImg github"
+        "profileImg tstory"
+    ;
+}
+@media (max-width:768px){
+	#section1-grid {
+        height: 700px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "title title title"
+            "profileImg profileImg profileImg"
+            "name name name"
+            "email github tstory"
+        ;
+    }
+}
+#title-grid {grid-area: title;}
+#profileImg-grid {
+    grid-area: profileImg;
+    display: flex;
+    align-items: center;
+}
+#name-grid {
+    grid-area: name;
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+#email-grid {
+    grid-area: email;
+    display: flex;
+    align-items: center;
+}
+#github-grid {
+    grid-area: github;
+    display: flex;
+    align-items: center;
+}
+#tstory-grid {
+    grid-area: tstory;
+    display: flex;
+    align-items: center;
+}
+
+/* bgColor */
+/* #title-grid {background-color: red;}
+#profileImg-grid {background-color: orange;}
+#name-grid {background-color: yellow;}
+#email-grid {background-color: green;}
+#github-grid {background-color: blue;}
+#tstory-grid {background-color: purple;} */
+
+
+.title {
+    /* 네모랑 타이틀 높이 맞추기 위함 */
+    display: flex;
+    align-items: center;
+
+    /* background-color: gold; */
+}
+.section-title-square {
+    width: 0.8rem;
+    height: 2.3rem;
+    margin-right: 0.5rem;
+    /* background-color: #11009E; */
+    background: linear-gradient(180deg, #11009E, #8696FE);
+}
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    /* letter-spacing:-1.9rem; */
+}
+
+
+#profile-img {
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+
+
+/* 이메일, 깃헙, 티스토리 아이콘 */
+.icon-circle {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 100%;
+    background-color: #222;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    margin-right: 1.5rem;
+}
+.icon-img {
+    height: 1.4rem;
+
+}
+#section1-grid a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #11009E;
+}
+#section1-grid a:hover {
+    transition-duration: 0.3s;
+    color: #8696FE;
+}
