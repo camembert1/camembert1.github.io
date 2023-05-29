@@ -2,8 +2,12 @@
 
 /* 사용 색상 변수 선언 */
 :root {
+
+    --bg: #fff;
+
 	--main: #4B56D2;
     --sub: #00E7FF;
+
     --font: #222;
     --border: #efefef;
 }
@@ -23,6 +27,8 @@ body,html {
     color:var(--font);
     letter-spacing:-.6px;
 
+    background-color: var(--bg);
+
     word-break:keep-all;
     overflow-x: hidden;
     /* overflow: hidden; */
@@ -38,7 +44,7 @@ body,html {
 
     /* 섹션 간 간격 */
     margin-top : 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 6rem;
     
     /* 섹션 간 구분 선 */
     border-bottom: 1px solid var(--border);
@@ -111,7 +117,7 @@ h1 {
 }
 
 /* section1 grid bgColor */
-/* #title-grid {background-color: red;}
+/* #title1-grid {background-color: red;}
 #profileImg-grid {background-color: orange;}
 #name-grid {background-color: yellow;}
 #email-grid {background-color: green;}
@@ -124,14 +130,14 @@ h1 {
     grid-template-columns: 35% 1fr;
     grid-template-rows: 6rem 4rem 4rem 4rem 4rem;
     grid-template-areas:
-        "title title"
+        "title1 title1"
         "profileImg name"
         "profileImg email"
         "profileImg github"
         "profileImg tstory"
     ;
 }
-#title-grid {grid-area: title;}
+#title1-grid {grid-area: title1;}
 #profileImg-grid {
     grid-area: profileImg;
     display: flex;
@@ -167,7 +173,7 @@ h1 {
         grid-template-columns: 1fr 7rem 1fr;
         grid-template-rows: 7rem 20rem 10rem 1fr;
         grid-template-areas:
-            "title title title"
+            "title1 title1 title1"
             "profileImg profileImg profileImg"
             "name name name"
             "email github tstory"
@@ -197,5 +203,10 @@ h1 {
     }
 }
 
+
+
+
+
+/* section2 EDUCATION */
 
 
