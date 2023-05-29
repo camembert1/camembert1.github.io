@@ -71,7 +71,7 @@ body,html {
     .container {
         width: 90vw;
         /* 내용 상단 여백 */
-        padding-top: 10rem;
+        padding-top: 1rem;
     }
 }
 
@@ -190,7 +190,8 @@ h1 {
 @media (max-width:768px){
 	#section1-grid {
 
-        height: calc(100vh - 18rem);
+        margin-top: 8rem;
+        height: calc(100vh - 13.5rem);
         padding-bottom: 0;
 
         grid-template-columns: 1fr 7rem 1fr;
