@@ -71,7 +71,7 @@ body,html {
     .container {
         width: 90vw;
         /* 내용 상단 여백 */
-        padding-top: 1rem;
+        padding-top: 10rem;
     }
 }
 
@@ -190,12 +190,11 @@ h1 {
 @media (max-width:768px){
 	#section1-grid {
 
-        margin-top: 8rem;
-        height: calc(100vh - 13.5rem);
+        height: calc(100vh - 18rem);
         padding-bottom: 0;
 
         grid-template-columns: 1fr 7rem 1fr;
-        grid-template-rows: 20rem 10rem 8rem;
+        grid-template-rows: 20rem 10rem 5rem;
         grid-template-areas:
             "profileImg profileImg profileImg"
             "name name name"
