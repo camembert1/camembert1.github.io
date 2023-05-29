@@ -1,5 +1,15 @@
-// 다크,라이트모드
-document.querySelector('#switchBtn').addEventListener('click', function(e) {
+// 다크,라이트모드 관련
+const switchBtn = document.querySelector('#switchBtn');
+
+if (switchBtn.getAttribute('data-status') == 'light') {
+    document.querySelector('#utterance-dark').style.display = 'none';
+    switchBtn.innerHTML = 'dark';
+} else {
+    document.querySelector('#utterance-light').style.display = 'none';
+    switchBtn.innerHTML = 'light';
+}
+
+switchBtn.addEventListener('click', function(e) {
 
     const $body = document.querySelector('body');
     const dataStatus = this.getAttribute('data-status');
@@ -18,6 +28,10 @@ document.querySelector('#switchBtn').addEventListener('click', function(e) {
             icon.src = icon.src.replace('fff', '222');
         });
 
+        // 댓글창 변경
+        document.querySelector('#utterance-light').style.display = 'none';
+        document.querySelector('#utterance-dark').style.display = 'block';
+
         // 상태는 다크모드로 바꾸고 라이트 모드로 변경하는 버튼 노출
         this.setAttribute('data-status', 'dark');
         this.innerHTML = 'light';
@@ -31,6 +45,9 @@ document.querySelector('#switchBtn').addEventListener('click', function(e) {
         icons.forEach(function(icon) {
             icon.src = icon.src.replace('222', 'fff');
         });
+
+        document.querySelector('#utterance-light').style.display = 'block';
+        document.querySelector('#utterance-dark').style.display = 'none';
 
         this.setAttribute('data-status', 'light');
         this.innerHTML = 'dark';
