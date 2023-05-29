@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+/* 사용 색상 변수 선언 */
+:root {
+	--main: #4B56D2;
+    --sub: #00E7FF;
+    --font: #222;
+    --border: #efefef;
+}
+
+div {
+	color: var(--main-font-color);   /* CSS 변수 사용 */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,41 +20,49 @@
 body,html {
     font-size:16px;
     font-family: 'Pretendard';
-    color:#222;
+    color:var(--font);
     letter-spacing:-.6px;
 
     word-break:keep-all;
-    /* overflow-x:hidden; */
-    overflow: hidden;
+    overflow-x: hidden;
+    /* overflow: hidden; */
 
     -webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 }
-@media (max-width:768px){body,html{font-size:12px}}
-
 .container {
     width: 765px;
     margin: 0 auto;
 }
-@media (max-width:768px){.container {width: 90vw}}
+.container>section {
 
-.swiper-container{
-    height: 100vh;
+    /* 섹션 간 간격 */
+    margin-top : 5rem;
+    padding-bottom: 5rem;
+    
+    /* 섹션 간 구분 선 */
+    border-bottom: 1px solid var(--border);
+}
+@media (max-width:768px){
+    body,html {font-size:12px}
+    .container {width: 90vw}
 }
 
-.container section {
-    /* width: 100%; */
-    height: 100vh;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-}
 
+/* section1 ABOUT ME */
+
+/* bgColor */
+/* #title-grid {background-color: red;}
+#profileImg-grid {background-color: orange;}
+#name-grid {background-color: yellow;}
+#email-grid {background-color: green;}
+#github-grid {background-color: blue;}
+#tstory-grid {background-color: purple;} */
 
 #section1-grid {
     display: grid;
     width: 100%;
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: 35% 1fr;
     grid-template-rows: 6rem 4rem 4rem 4rem 4rem;
     grid-template-areas:
         "title title"
@@ -52,19 +72,6 @@ body,html {
         "profileImg tstory"
     ;
 }
-@media (max-width:768px){
-	#section1-grid {
-        height: 700px;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-areas:
-            "title title title"
-            "profileImg profileImg profileImg"
-            "name name name"
-            "email github tstory"
-        ;
-    }
-}
 #title-grid {grid-area: title;}
 #profileImg-grid {
     grid-area: profileImg;
@@ -73,8 +80,14 @@ body,html {
 }
 #name-grid {
     grid-area: name;
-    font-size: 2.3rem;
+    font-size: 2.1rem;
     font-weight: 700;
+    display: flex;
+} #name-grid span {
+    color: var(--main);
+}
+.icon-circle {
+    margin-right: 1.5rem;
 }
 #email-grid {
     grid-area: email;
@@ -92,13 +105,42 @@ body,html {
     align-items: center;
 }
 
-/* bgColor */
-/* #title-grid {background-color: red;}
-#profileImg-grid {background-color: orange;}
-#name-grid {background-color: yellow;}
-#email-grid {background-color: green;}
-#github-grid {background-color: blue;}
-#tstory-grid {background-color: purple;} */
+@media (max-width:768px){
+	#section1-grid {
+        /* height: 700px; */
+        grid-template-columns: 1fr 4rem 1fr;
+        grid-template-rows: 7rem 20rem 10rem 1fr;
+        grid-template-areas:
+            "title title title"
+            "profileImg profileImg profileImg"
+            "name name name"
+            "email github tstory"
+        ;
+    }
+    #section1-grid a {
+        display: none;
+    }
+
+    #profileImg-grid {
+        justify-content: center;
+    }
+    #name-grid {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .icon-circle {
+        margin-right: 0;
+    }
+    #email-grid {
+        justify-content: flex-end;
+    }
+    #github-grid {
+        justify-content: center;
+    }
+}
+
+
 
 
 .title {
@@ -112,8 +154,8 @@ body,html {
     width: 0.8rem;
     height: 2.3rem;
     margin-right: 0.5rem;
-    /* background-color: #11009E; */
-    background: linear-gradient(180deg, #11009E, #8696FE);
+    background-color: var(--main);
+    /* background: linear-gradient(180deg, var(--main), var(--sub)); */
 }
 h1 {
     font-size: 3rem;
@@ -124,7 +166,7 @@ h1 {
 
 #profile-img {
     height: 100%;
-    border-radius: 0.5rem;
+    /* border-radius: 0.5rem; */
 }
 
 
@@ -134,14 +176,13 @@ h1 {
     width: 2.4rem;
     height: 2.4rem;
     border-radius: 100%;
-    background-color: #222;
+    background-color: var(--font);
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     cursor: pointer;
-    margin-right: 1.5rem;
 }
 .icon-img {
     height: 1.4rem;
@@ -150,9 +191,10 @@ h1 {
 #section1-grid a {
     text-decoration: none;
     font-size: 1.2rem;
-    color: #11009E;
+    color: var(--main);
 }
 #section1-grid a:hover {
-    transition-duration: 0.3s;
-    color: #8696FE;
+    transition-duration: 0.6s;
+    font-size: 1.21rem;
+    color: var(--sub)
 }

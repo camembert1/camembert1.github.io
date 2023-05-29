@@ -20,109 +20,63 @@
 		<!-- Pretendard font -->
 		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
 
-		<!-- Swiper 슬라이더 -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-		
 	</head>
 	<body>
 		<!-- <a href="/html/page1.html">page1로 이동</a> -->
 		<div class="container">
 
-			<div class="swiper-container mySwiper">
-				<div class="swiper-wrapper">
-
-					<div class="swiper-slide">
-						<section>
-							<div id="section1-grid">
-			
-								<div id="title-grid">
-									<div class="title">
-										<div class="section-title-square"></div>
-										<h1>ABOUT ME</h1>
-									</div>
-								</div>
-			
-								<div id="profileImg-grid">
-									<img id="profile-img" src="/img/profile-img.jpg" alt="">
-								</div>
-			
-								<div id="name-grid">
-									<p>이유정 (LEE YU JEONG)</p>
-								</div>
-			
-								<div id="email-grid">
-									<div class="icon-circle" title="ige12091@gmail.com" onclick="location.href='mailto:ige12091@gmail.com'">
-										<img class="icon-img" src="/img/mail-icon-fff.png" alt="">
-									</div>
-									<a href="">ige12091@gmail.com</a>
-								</div>
-			
-								<div id="github-grid">
-									<div class="icon-circle" onclick="location.href='https://github.com/camembert1'">
-										<img class="icon-img" src="/img/github-icon-fff.png" alt="">
-									</div>
-									<a href="">https://github.com/camembert1</a>
-								</div>
-			
-								<div id="tstory-grid">
-									<div class="icon-circle">
-										<img class="icon-img" src="/img/Tstory-icon-fff.png" alt="">
-									</div>
-									<a href="">https://github.com/camembert1</a>
-								</div>
-			
-							</div>
-						</section>
+			<section id="section1-grid">
+				<div id="title-grid">
+					<div class="title">
+						<div class="section-title-square"></div>
+						<h1>ABOUT ME</h1>
 					</div>
-
-					<div class="swiper-slide">
-						<section>
-							<p>sadfsadf</p>
-							<p>asdfsadfsadfasdf</p>
-							<p>프로젝트 소개</p>
-							<p>ㅁㄴㅇㄻㄴㅇㄹ</p>
-							<p>기능 설명 및 캡처</p>
-							<p>ㄹㅇㄶㅇㅀㄴㅇㅀ</p>
-						</section>
-					</div>
-
-
-
 				</div>
-				<div class="swiper-pagination"></div>
-			</div>
+
+				<div id="profileImg-grid">
+					<img id="profile-img" src="/img/profile-img.jpg" alt="">
+				</div>
+
+				<div id="name-grid">
+					<div>안녕하세요!&nbsp</div>
+					<div>신입 개발자 <span>이유정</span>입니다.</div>
+				</div>
+
+				<div id="email-grid">
+					<div class="icon-circle" title="ige12091@gmail.com" onclick="location.href='mailto:ige12091@gmail.com'">
+						<img class="icon-img" src="/img/mail-icon-fff.png" alt="">
+					</div>
+					<a href="">ige12091@gmail.com</a>
+				</div>
+
+				<div id="github-grid">
+					<div class="icon-circle" onclick="location.href='https://github.com/camembert1'">
+						<img class="icon-img" src="/img/github-icon-fff.png" alt="">
+					</div>
+					<a href="">https://github.com/camembert1</a>
+				</div>
+
+				<div id="tstory-grid">
+					<div class="icon-circle">
+						<img class="icon-img" src="/img/Tstory-icon-fff.png" alt="">
+					</div>
+					<a href="">https://github.com/camembert1</a>
+				</div>
+			</section>
+
+			<section>
+				<p>sadfsadf</p>
+				<p>asdfsadfsadfasdf</p>
+				<p>프로젝트 소개</p>
+				<p>ㅁㄴㅇㄻㄴㅇㄹ</p>
+				<p>기능 설명 및 캡처</p>
+				<p>ㄹㅇㄶㅇㅀㄴㅇㅀ</p>
+			</section>
+		
+
+
 
 		</div>
-
-		<script>
-			// 페이지 넘김 효과
-			let swiper = new Swiper(".mySwiper", {
-				on: {
-					init: function() {    
-					// swiper 초기화 될때 실행
-					},
-					slideChangeTransitionStart: function() {
-					// 페이지 넘어갈 때마다 실행
-					}
-				},
-				
-				direction: "vertical", // 슬라이드 방향
-				speed: 650,
-				//slidesPerView: 1, // 한 슬라이드에 보여줄 개수
-				effect: 'slide', // 페이지 넘어가는 효과
-				spaceBetween: 30, // 슬라이드 사이 여백 
-				mousewheel: true,
-				pagination: {
-				   el: ".swiper-pagination", // 버튼을 담을 태그
-				   clickable: true, // 버튼 클리기 여부
-				},
-
-				autoHeight: false, // 현재 활성 슬라이드에 맞게 높이 조정
-				resistance: false, // 슬라이드 터치 저항 여부
-				allowTouchMove: false, // 스와이핑X 버튼으로만 슬라이드 조작 가능
-			});
-		</script>
 
 	</body>
 </html>
