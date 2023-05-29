@@ -48,10 +48,69 @@ body,html {
     .container {width: 90vw}
 }
 
+/* 각 section별 title */
+.title {
+    /* 네모랑 타이틀 높이 맞추기 위함 */
+    display: flex;
+    align-items: center;
+}
+.section-title-square {
+    width: 0.8rem;
+    height: 2.3rem;
+    margin-right: 0.5rem;
+    background-color: var(--main);
+    /* background: linear-gradient(180deg, var(--main), var(--sub)); */
+}
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    /* letter-spacing:-1.9rem; */
+}
+
+
+
 
 /* section1 ABOUT ME */
 
-/* bgColor */
+#profile-img {
+    height: 100%;
+    /* border-radius: 0.5rem; */
+}
+
+/* 이메일, 깃헙, 티스토리 아이콘 */
+.icon-circle {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 100%;
+    background-color: var(--font);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    margin-right: 1.5rem;
+}
+.icon-img {
+    height: 60%;
+}
+#tstory-grid .icon-img {
+    height: 50%;
+}
+
+/* 이메일, 깃헙, 티스토리 링크 */
+#section1-grid a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--main);
+}
+#section1-grid a:hover {
+    transition-duration: 0.6s;
+    font-size: 1.21rem;
+    color: var(--sub)
+}
+
+/* section1 grid bgColor */
 /* #title-grid {background-color: red;}
 #profileImg-grid {background-color: orange;}
 #name-grid {background-color: yellow;}
@@ -86,9 +145,6 @@ body,html {
 } #name-grid span {
     color: var(--main);
 }
-.icon-circle {
-    margin-right: 1.5rem;
-}
 #email-grid {
     grid-area: email;
     display: flex;
@@ -108,7 +164,7 @@ body,html {
 @media (max-width:768px){
 	#section1-grid {
         /* height: 700px; */
-        grid-template-columns: 1fr 4rem 1fr;
+        grid-template-columns: 1fr 7rem 1fr;
         grid-template-rows: 7rem 20rem 10rem 1fr;
         grid-template-areas:
             "title title title"
@@ -120,7 +176,6 @@ body,html {
     #section1-grid a {
         display: none;
     }
-
     #profileImg-grid {
         justify-content: center;
     }
@@ -131,6 +186,8 @@ body,html {
     }
     .icon-circle {
         margin-right: 0;
+        width: 5rem;
+        height: 5rem;
     }
     #email-grid {
         justify-content: flex-end;
@@ -142,59 +199,3 @@ body,html {
 
 
 
-
-.title {
-    /* 네모랑 타이틀 높이 맞추기 위함 */
-    display: flex;
-    align-items: center;
-
-    /* background-color: gold; */
-}
-.section-title-square {
-    width: 0.8rem;
-    height: 2.3rem;
-    margin-right: 0.5rem;
-    background-color: var(--main);
-    /* background: linear-gradient(180deg, var(--main), var(--sub)); */
-}
-h1 {
-    font-size: 3rem;
-    font-weight: 900;
-    /* letter-spacing:-1.9rem; */
-}
-
-
-#profile-img {
-    height: 100%;
-    /* border-radius: 0.5rem; */
-}
-
-
-
-/* 이메일, 깃헙, 티스토리 아이콘 */
-.icon-circle {
-    width: 2.4rem;
-    height: 2.4rem;
-    border-radius: 100%;
-    background-color: var(--font);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    cursor: pointer;
-}
-.icon-img {
-    height: 1.4rem;
-
-}
-#section1-grid a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: var(--main);
-}
-#section1-grid a:hover {
-    transition-duration: 0.6s;
-    font-size: 1.21rem;
-    color: var(--sub)
-}
