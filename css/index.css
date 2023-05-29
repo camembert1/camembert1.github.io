@@ -1,26 +1,27 @@
 @charset "UTF-8";
 
-/* 사용 색상 변수 선언 */
+/* 변수 선언 */
 :root {
 
+    /* color */
     --bg: #fff;
 
 	--main: #4B56D2;
-    --sub: #00E7FF;
+    --sub: #6976ff;
 
     --font: #222;
     --border: #efefef;
-}
 
-div {
-	color: var(--main-font-color);   /* CSS 변수 사용 */
+    /* font-size */
+    --font-size1: 3rem;
+    --font-size2: 2.1rem;
+    --font-size3: 1.2rem;
 }
 
 * {
     margin: 0;
     padding: 0;
 }
-
 body,html {
     font-size:16px;
     font-family: 'Pretendard';
@@ -36,15 +37,30 @@ body,html {
     -webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 }
+#btn-area {
+    height: 3rem;
+
+    /* 버튼 위치 */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    /* 버튼과 container 사이 여백 */
+    margin-bottom: 2rem;
+}
+#switchBtn {
+    position: fixed;
+    /* 버튼 우측 여백 */
+    margin-right: 1rem;
+}
 .container {
     width: 765px;
     margin: 0 auto;
 }
 .container>section {
-
     /* 섹션 간 간격 */
-    margin-top : 5rem;
     padding-bottom: 6rem;
+    margin-bottom: 5rem;
     
     /* 섹션 간 구분 선 */
     border-bottom: 1px solid var(--border);
@@ -54,9 +70,13 @@ body,html {
     .container {width: 90vw}
 }
 
+
 /* 각 section별 title */
 .title {
-    /* 네모랑 타이틀 높이 맞추기 위함 */
+    /* title과 section사이 거리 */
+    margin-bottom: 2.6rem;
+
+    /* 네모랑 텍스트 높이 맞추기 위함 */
     display: flex;
     align-items: center;
 }
@@ -64,13 +84,12 @@ body,html {
     width: 0.8rem;
     height: 2.3rem;
     margin-right: 0.5rem;
-    background-color: var(--main);
-    /* background: linear-gradient(180deg, var(--main), var(--sub)); */
+    /* background-color: var(--main); */
+    background: linear-gradient(-45deg, var(--main), var(--sub));
 }
 h1 {
-    font-size: 3rem;
+    font-size: var(--font-size1);
     font-weight: 900;
-    /* letter-spacing:-1.9rem; */
 }
 
 
@@ -80,7 +99,6 @@ h1 {
 
 #profile-img {
     height: 100%;
-    /* border-radius: 0.5rem; */
 }
 
 /* 이메일, 깃헙, 티스토리 아이콘 */
@@ -106,19 +124,18 @@ h1 {
 
 /* 이메일, 깃헙, 티스토리 링크 */
 #section1-grid a {
-    text-decoration: none;
-    font-size: 1.2rem;
+    /* text-decoration: none; */
+    font-size: var(--font-size3);
     color: var(--main);
 }
 #section1-grid a:hover {
-    transition-duration: 0.6s;
-    font-size: 1.21rem;
+    transition-duration: 0.3s;
+    transform: translateY(-0.05rem);
     color: var(--sub)
 }
 
 /* section1 grid bgColor */
-/* #title1-grid {background-color: red;}
-#profileImg-grid {background-color: orange;}
+/* #profileImg-grid {background-color: orange;}
 #name-grid {background-color: yellow;}
 #email-grid {background-color: green;}
 #github-grid {background-color: blue;}
@@ -128,16 +145,14 @@ h1 {
     display: grid;
     width: 100%;
     grid-template-columns: 35% 1fr;
-    grid-template-rows: 6rem 4rem 4rem 4rem 4rem;
+    grid-template-rows: 4rem 4rem 4rem 4rem;
     grid-template-areas:
-        "title1 title1"
         "profileImg name"
         "profileImg email"
         "profileImg github"
         "profileImg tstory"
     ;
 }
-#title1-grid {grid-area: title1;}
 #profileImg-grid {
     grid-area: profileImg;
     display: flex;
@@ -145,7 +160,7 @@ h1 {
 }
 #name-grid {
     grid-area: name;
-    font-size: 2.1rem;
+    font-size: var(--font-size2);
     font-weight: 700;
     display: flex;
 } #name-grid span {
@@ -169,11 +184,14 @@ h1 {
 
 @media (max-width:768px){
 	#section1-grid {
-        /* height: 700px; */
+
+        margin-top: 10rem;
+        height: calc(100vh - 18.5rem);
+        padding-bottom: 0;
+
         grid-template-columns: 1fr 7rem 1fr;
-        grid-template-rows: 7rem 20rem 10rem 1fr;
+        grid-template-rows: 20rem 10rem 8rem;
         grid-template-areas:
-            "title1 title1 title1"
             "profileImg profileImg profileImg"
             "name name name"
             "email github tstory"
@@ -209,4 +227,6 @@ h1 {
 
 /* section2 EDUCATION */
 
-
+#khLogo-img {
+    width: 8rem;
+}
