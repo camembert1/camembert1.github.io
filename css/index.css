@@ -122,6 +122,7 @@ h3 {
 
 #profile-img {
     height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 }
 
 /* 이메일, 깃헙, 티스토리 아이콘 */
@@ -158,12 +159,12 @@ h3 {
 }
 
 /* section1 grid bgColor */
-/* #profileImg-grid {background-color: orange;}
+#profileImg-grid {background-color: orange;}
 #name-grid {background-color: yellow;}
 #email-grid {background-color: green;}
 #github-grid {background-color: blue;}
 #tstory-grid {background-color: purple;}
-#arrow-grid {background-color: palevioletred;} */
+#arrow-grid {background-color: palevioletred;}
 
 #section1-grid {
     display: grid;
@@ -216,13 +217,16 @@ h3 {
         padding-bottom: 0;
 
         grid-template-columns: 1fr 7rem 1fr;
-        grid-template-rows: 20rem 10rem 5rem 13rem;
+        grid-template-rows: 20rem 10rem 5rem 9rem;
         grid-template-areas:
             "profileImg profileImg profileImg"
             "name name name"
             "email github tstory"
             "arrow arrow arrow"
         ;
+    }
+    #section1-grid {
+        padding-bottom: 6rem;
     }
     #section1-grid a {
         display: none;
@@ -254,6 +258,7 @@ h3 {
         font-size: 5rem;
         /* font-weight: 900; */
         color: var(--border);
+        
     }
 }
 
@@ -420,6 +425,88 @@ h3 {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+}
+
+
+
+
+
+
+/* section4 PROJECTS */
+
+.projects {
+    background-color: var(--border);
+    width: 21.5rem;
+    height: 21.5rem;
+    /* border-radius: 0.5rem; */
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+
+    cursor: pointer;
+}
+.projects:hover {
+    transition-duration: 0.3s;
+    transform: translateY(-0.3rem);
+    /* transform: translate(-0.3rem, -0.3rem); */
+}
+.project-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70%;
+}
+.project-info {
+    height: 30%;
+    padding: 1rem;
+}
+
+#project2-grid .project-img {
+    background-image: url(/img/PerfumePalette-img.png);
+}
+#project1-grid .project-img {
+    background-image: url(/img/ZOOTOPIA-img.png);
+}
+
+/* section4 grid bgColor */
+/* #project2-grid {background-color: red;}
+#project1-grid {background-color: orange;} */
+
+#section4-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "project2 project1"
+    ;
+}
+#project2-grid {
+    grid-area: project2;
+    display: flex;
+    justify-content: flex-start;
+}
+#project1-grid {
+    grid-area: project1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width:768px){
+    #section4-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "project2"
+            "project1"
+        ;
+    }
+    .projects-grid {
+        justify-content: center !important;
+        margin-bottom: 4rem;
+    }
+    #project1-grid {
+        margin-bottom: 0 !important;
     }
 
 }
