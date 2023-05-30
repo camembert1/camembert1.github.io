@@ -69,6 +69,8 @@ const lightModeFunc = function() {
 // 페이지가 열렸을 때, 만약 localStorage에서 가져온 theme값이 dark라면 다크모드
 if (theme == 'dark') {
     darkModeFunc();
+} else {
+    lightModeFunc();
 }
 
 // 버튼을 클릭했을 때, 현재 테마가 라이트라면 다크로 반대는 반대로~
