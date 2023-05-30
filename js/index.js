@@ -1,3 +1,19 @@
+// 반응형 모바일 화면 화살표
+function scrollToBottom() {
+    const section1 = document.getElementById("section1-grid");
+    const section1Info = section1.getBoundingClientRect();
+    const scrollTo = section1Info.bottom + window.scrollY;
+    
+    window.scrollTo({
+        top: scrollTo,
+        behavior: "smooth"
+    });
+}
+
+
+
+
+
 // 다크,라이트모드 관련
 const switchBtn = document.querySelector('#switchBtn');
 

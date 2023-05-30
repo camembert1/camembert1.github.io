@@ -56,7 +56,7 @@ body,html {
     margin: 0 auto;
 
     /* 내용 상단 여백 */
-    padding-top: 3rem;
+    padding-top: 5rem;
 }
 .container>section {
     /* 섹션 간 간격 */
@@ -106,6 +106,15 @@ h3 {
     background: linear-gradient(-45deg, var(--main), var(--sub));
 }
 
+/* 최종업데이트날짜 */
+#last-update {
+    transform: translateY(0.5rem);
+    margin-left: 0.5rem;
+    font-weight: 200;
+}
+
+
+
 
 
 
@@ -153,7 +162,8 @@ h3 {
 #name-grid {background-color: yellow;}
 #email-grid {background-color: green;}
 #github-grid {background-color: blue;}
-#tstory-grid {background-color: purple;} */
+#tstory-grid {background-color: purple;}
+#arrow-grid {background-color: palevioletred;} */
 
 #section1-grid {
     display: grid;
@@ -193,6 +203,10 @@ h3 {
     display: flex;
     align-items: center;
 }
+#arrow-grid {
+    grid-area: arrow;
+    display: none;
+}
 
 @media (max-width:768px){
 	#section1-grid {
@@ -202,11 +216,12 @@ h3 {
         padding-bottom: 0;
 
         grid-template-columns: 1fr 7rem 1fr;
-        grid-template-rows: 20rem 10rem 5rem;
+        grid-template-rows: 20rem 10rem 5rem 13rem;
         grid-template-areas:
             "profileImg profileImg profileImg"
             "name name name"
             "email github tstory"
+            "arrow arrow arrow"
         ;
     }
     #section1-grid a {
@@ -230,6 +245,15 @@ h3 {
     }
     #github-grid {
         justify-content: center;
+    }
+    #arrow-grid {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        font-size: 5rem;
+        /* font-weight: 900; */
+        color: var(--border);
     }
 }
 
@@ -257,7 +281,7 @@ h3 {
     display: grid;
     width: 100%;
     grid-template-columns: auto auto 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr auto;
     grid-template-areas:
         "edueduLogo eduInstitution eduPeriod"
         "eduDetail eduDetail eduDetail"
@@ -322,4 +346,80 @@ h3 {
     #eduDetail-grid {
         justify-content: center;
     }
+}
+
+
+
+
+
+
+/* section3 SKILLS */
+#section3-grid ul {
+    list-style-type: '▪   ';
+    margin-left: 1.2rem;
+}
+
+/* section3 grid bgColor */
+/* #backEnd-grid {background-color: red;}
+#frontEnd-grid {background-color: orange;}
+#database-grid {background-color: yellow;}
+#etc-grid {background-color: green;} */
+
+#section3-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "backEnd frontEnd database etc"
+    ;
+}
+#backEnd-grid {
+    grid-area: backEnd;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+}
+#frontEnd-grid {
+    grid-area: frontEnd;
+    overflow-wrap: break-word;
+}
+#database-grid {
+    grid-area: database;
+    overflow-wrap: break-word;
+}
+#etc-grid {
+    grid-area: etc;
+    overflow-wrap: break-word;
+}
+
+@media (max-width:768px){
+	#section3-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "backEnd"
+            "frontEnd"
+            "database"
+            "etc"
+        ;
+    }
+    #section3-grid>div {
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #etc-grid {
+        margin-bottom: 0 !important; 
+    }
+    #section3-grid ul {
+        list-style-type: none;
+        margin-left: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
