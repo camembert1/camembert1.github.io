@@ -57,6 +57,9 @@ body,html {
 
     /* 내용 상단 여백 */
     padding-top: 5rem;
+
+    /* 하단 여백 */
+    padding-bottom: 5rem;
 }
 .container>section {
     /* 섹션 간 간격 */
@@ -111,6 +114,11 @@ h3 {
     transform: translateY(0.5rem);
     margin-left: 0.5rem;
     font-weight: 200;
+}
+
+/* 댓글창 기본값 */
+#utterance-dark {
+    display: none;
 }
 
 
@@ -440,7 +448,7 @@ h3 {
     background-color: var(--border);
     width: 21.5rem;
     height: 21.5rem;
-    /* border-radius: 0.5rem; */
+    border-radius: 0.3rem;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 
     cursor: pointer;
@@ -455,10 +463,12 @@ h3 {
     background-position: center;
     background-repeat: no-repeat;
     height: 70%;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -20px;
 }
 .project-info {
     height: 30%;
     padding: 1rem;
+    
 }
 
 #project2-grid .project-img {
