@@ -198,7 +198,7 @@ h3 {
 	#section1-grid {
 
         margin-top: 8rem;
-        height: calc(100vh - 13.5rem);
+        height: 670px;
         padding-bottom: 0;
 
         grid-template-columns: 1fr 7rem 1fr;
