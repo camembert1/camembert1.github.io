@@ -159,12 +159,12 @@ h3 {
 }
 
 /* section1 grid bgColor */
-#profileImg-grid {background-color: orange;}
+/* #profileImg-grid {background-color: orange;}
 #name-grid {background-color: yellow;}
 #email-grid {background-color: green;}
 #github-grid {background-color: blue;}
 #tstory-grid {background-color: purple;}
-#arrow-grid {background-color: palevioletred;}
+#arrow-grid {background-color: palevioletred;} */
 
 #section1-grid {
     display: grid;
