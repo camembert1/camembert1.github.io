@@ -79,7 +79,8 @@ const changeMode = function() {
 changeMode();
 
 // 창 크기가 바뀌었을 때, theme값에 따라 테마 적용
-window.addEventListener('resize', changeMode);
+// 이거 없어도 되나?
+// window.addEventListener('resize', changeMode);
 
 // 버튼을 클릭했을 때, 현재 테마가 라이트라면 다크로 반대는 반대로~
 switchBtn.addEventListener('click', function(e) {
