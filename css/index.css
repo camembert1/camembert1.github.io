@@ -254,6 +254,22 @@ h3 {
         color: var(--border);
         
     }
+    #downBtn {
+        cursor: pointer;
+        width: 5rem;
+        height: 5rem;
+        background-image: url(/img/down-arrow.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        opacity: 0.2;
+        animation: fadeAnimation 1.5s infinite alternate;
+    }
+    @keyframes fadeAnimation {
+        0% { opacity: 0.2; }
+        100% { opacity: 1; }
+    }
 }
 
 
