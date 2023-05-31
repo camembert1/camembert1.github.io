@@ -66,7 +66,7 @@
 
 /* 스크롤바 막대 */
 ::-webkit-scrollbar-thumb {
-    background: var(--main); /* 스크롤바 막대 색상 */
+    background: linear-gradient(-45deg, var(--main), var(--sub)); /* 스크롤바 막대 색상 */
     border: 0.2rem solid var(--border); /* 스크롤바 막대 테두리 설정  */
     border-radius: 1rem;
 }
