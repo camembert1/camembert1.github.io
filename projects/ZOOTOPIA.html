@@ -1,10 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
 
-</body>
+        <!-- for반응형 -->
+		<meta name="viewport" content="initial-scale=1,user-scalable=no">
+
+		<title>이유정 Projects</title>
+
+		<!-- 링크 공유 시 노출되는 설명 -->
+		<meta property="og:description" content="ZOOTOPIA">
+		<meta property="og:image" content="/img/projects-img/ZOOTOPIA/ZOOTOPIA-img.png" />
+		
+		<!-- Favicon -->
+		<link rel="icon" href="/img/favicon.png" />
+		<link rel="apple-touch-icon" href="/img/favicon.png" />
+
+		<!-- Js -->
+		<script src="/js/projects.js" defer></script>
+		<!-- <script src="/js/effects.js" defer></script> -->
+
+		<!-- Css -->
+		<link rel="stylesheet" href="/css/projects.css">
+        <link rel="stylesheet" href="/css/themeBtn.css">
+
+		<!-- Pretendard font -->
+		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+
+        <!-- Swiper 슬라이더 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
+    </head>
+    <body>
+        <div id="btn-area">
+			<div id="themeBtn-area">
+				<button id="switchBtn"></button>
+			</div>
+	
+			<!-- <div id="scrollBtn-area">
+				<button id="scrollBtn">위로</button>
+			</div> -->
+		</div>
+        
+        <div class="container">
+            <div id="closeBtn-area">
+                <button id="closeBtn" onclick="window.close();">✕</button>
+            </div>
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="project-image"></div>
+                        <div class="project-description"></div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="project-image"></div>
+                        <div class="project-description"></div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="project-image"></div>
+                        <div class="project-description"></div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="project-image"></div>
+                        <div class="project-description"></div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="project-image"></div>
+                        <div class="project-description"></div>
+                    </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </body>
 </html>
