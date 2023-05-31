@@ -1,3 +1,21 @@
+// swiper 슬라이더
+var swiper = new Swiper(".mySwiper", {
+    pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
+
+
+
+
+
+
 // 다크,라이트모드 관련
 
 // 전체삭제
