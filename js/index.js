@@ -86,3 +86,30 @@ switchBtn.addEventListener('click', function(e) {
         lightModeFunc();
     }
 });
+
+
+
+// 스크롤 버튼 관련
+
+// 버튼 클릭 시 스크롤 맨 위로
+const scrollBtn = document.querySelector('#scrollBtn');
+scrollBtn.addEventListener('click', function(e) {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // 부드러운 스크롤링을 위해 behavior 속성을 사용합니다.
+    });
+});
+
+// 이미 스크롤이 맨 위일 경우 버튼 숨김
+// if (window.pageYOffset === 0) {
+//     scrollBtn.style.display = "none";
+// }
+
+// 스크롤 동작 시 버튼 노출 여부 결정
+window.addEventListener("scroll", function() {
+    if (window.pageYOffset === 0) {
+        scrollBtn.classList.remove("visible");
+    } else {
+        scrollBtn.classList.add("visible");
+    }
+});

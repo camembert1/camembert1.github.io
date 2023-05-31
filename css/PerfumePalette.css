@@ -39,47 +39,96 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-#btn-area {
-    position: fixed;
-    width: 100%;
-    height: 3rem;
-
-    /* 버튼 위치 */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-#switchBtn {
-    /* 버튼 우측 여백 */
-    margin-right: 1rem;
-}
-
 .container {
     /* width: 765px;
     margin: 0 auto; */
     width: 100vw;
     height: 100vh;
 }
+@media (max-width:768px){
+    body,html {font-size:12px}
+    .container {}
+}
 
+
+/* 닫기 버튼 */
+#closeBtn-area {
+
+    /* 버튼 있는 공간 너비,높이 */
+    width: 100%;
+    height: 3rem;
+
+    /* 버튼 있는 공간 배경 */
+    background-color: var(--bg);
+
+    /* 버튼 공간에서 버튼 위치 */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+#closeBtn {
+    cursor: pointer;
+
+    /* 버튼 크기 */
+    width: 3rem;
+    height: 3rem;
+
+    /* X 크기 */
+    font-size: 2rem;
+
+    /* X 위치 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 버튼 디자인 */
+    border: 0;
+    background-color: rgb(0, 0, 0, 0);
+    color: var(--font)
+}
+
+
+
+
+
+/* 슬라이더 기본 */
 .swiper {
     width: 100%;
-    height: 80%;
+    height: calc(100% - 3rem);
 }
 
 .swiper-slide {
     text-align: center;
-    font-size: 18px;
     background-color: var(--border);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.swiper-slide img {
+/* .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+} */
+
+
+
+/* Swiper 디자인 변경 */
+:root {
+    --swiper-theme-color: var(--main);
+    --swiper-navigation-color: var(--main);
+    --swiper-pagination-color: linear-gradient(45deg, var(--main), var(--sub));
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-family: 'Marlett' !important;
+    font-size: 5rem !important;
+}
+.swiper-button-next::after {
+    content: '8' !important;
+}
+.swiper-button-prev::after {
+    content: 'w' !important;
 }

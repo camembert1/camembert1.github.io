@@ -22,6 +22,7 @@
 
 		<!-- Css -->
 		<link rel="stylesheet" href="/css/PerfumePalette.css">
+        <link rel="stylesheet" href="/css/themeBtn.css">
 
 		<!-- Pretendard font -->
 		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
@@ -33,12 +34,19 @@
     </head>
     <body>
         <div id="btn-area">
-			<button id="switchBtn"></button>
+			<div id="themeBtn-area">
+				<button id="switchBtn"></button>
+			</div>
+	
+			<!-- <div id="scrollBtn-area">
+				<button id="scrollBtn">위로</button>
+			</div> -->
 		</div>
         
-        <div class="container" style="height: 100vh;">
-            <br><br><br><br><br><br>
-            <div><button onclick="window.close();">닫기 버튼</button></div>
+        <div class="container">
+            <div id="closeBtn-area">
+                <button id="closeBtn" onclick="window.close();">✕</button>
+            </div>
 
             <!-- Swiper -->
             <div class="swiper mySwiper">
