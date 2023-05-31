@@ -4,7 +4,8 @@ var colour = "random"; // in addition to "random" can be set to any valid colour
 var sparkles = 50;
 
 // 반짝이 색상 설정 (기본은 랜덤)
-colour = "#4B56D2";
+// colour = "#4B56D2";
+
 /****************************
 *  Tinkerbell Magic Sparkle *
 *(c)2005-13 mf2fm web-design*
@@ -199,3 +200,6 @@ function newColour() {
     return ("rgb(" + c[0] + ", " + c[1] + ", " + c[2] + ")");
 }
 // ]]>
+
+
+

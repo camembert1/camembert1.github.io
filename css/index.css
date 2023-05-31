@@ -63,7 +63,7 @@ body,html {
 }
 .container>section {
     /* 섹션 간 간격 */
-    padding-bottom: 6rem;
+    padding-bottom: 5rem;
     margin-bottom: 5rem;
     
     /* 섹션 간 구분 선 */
@@ -472,10 +472,10 @@ h3 {
 }
 
 #project2-grid .project-img {
-    background-image: url(/img/PerfumePalette-img.png);
+    background-image: url(/img/projects-img/PerfumePalette/PerfumePalette-img.png);
 }
 #project1-grid .project-img {
-    background-image: url(/img/ZOOTOPIA-img.png);
+    background-image: url(/img/projects-img/ZOOTOPIA/ZOOTOPIA-img.png);
 }
 
 /* section4 grid bgColor */
