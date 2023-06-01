@@ -23,7 +23,7 @@ var swiper = new Swiper(".mySwiper", {
 
 const $body = document.querySelector('body');
 const icons = document.querySelectorAll('.icon-img');
-const switchBtn = document.querySelector('#switchBtn');
+// const switchBtn = document.querySelector('#switchBtn');
 
 // 페이지가 열렸을 때의 테마 확인
 let theme = window.localStorage.getItem('theme');
@@ -39,7 +39,7 @@ const darkModeFunc = function() {
     // 상태는 다크모드로 바꾸고 라이트 모드로 변경하는 버튼 노출
     window.localStorage.setItem('theme', 'dark');
     theme =  window.localStorage.getItem('theme');
-    switchBtn.innerHTML = 'light';
+    // switchBtn.innerHTML = 'light';
 }
 
 // 라이트모드 function
@@ -50,7 +50,7 @@ const lightModeFunc = function() {
 
     window.localStorage.setItem('theme', 'light');
     theme =  window.localStorage.getItem('theme');
-    switchBtn.innerHTML = 'dark';
+    // switchBtn.innerHTML = 'dark';
 }
 
 // theme값에 따라 테마를 바꾸는 function
@@ -70,13 +70,13 @@ changeMode();
 // window.addEventListener('resize', changeMode);
 
 // 버튼을 클릭했을 때, 현재 테마가 라이트라면 다크로 반대는 반대로~
-switchBtn.addEventListener('click', function() {
-    if (theme == 'light') {
-        darkModeFunc();
-    } else {
-        lightModeFunc();
-    }
-});
+// switchBtn.addEventListener('click', function() {
+//     if (theme == 'light') {
+//         darkModeFunc();
+//     } else {
+//         lightModeFunc();
+//     }
+// });
 
 
 
