@@ -50,6 +50,19 @@ html {
     .container {}
 }
 
+h1 {
+    font-size: var(--font-size1);
+    font-weight: 900;
+}
+h2 {
+    font-size: var(--font-size2);
+    font-weight: 700;
+}
+h3 {
+    font-size: var(--font-size3);
+    font-weight:400;
+}
+
 
 /* 닫기 버튼 */
 #closeBtn-area {
@@ -60,32 +73,43 @@ html {
 
     /* 버튼 있는 공간 배경 */
     background-color: var(--bg);
-
+    
     /* 버튼 공간에서 버튼 위치 */
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-
+    justify-content: space-between;
+    
 }
 #closeBtn {
     cursor: pointer;
-
+    
     /* 버튼 크기 */
     width: 3rem;
     height: 3rem;
-
+    
     /* X 크기 */
     font-size: 2rem;
-
+    
     /* X 위치 */
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     /* 버튼 디자인 */
     border: 0;
     background-color: rgb(0, 0, 0, 0);
     color: var(--font)
+}
+#project-title {
+    /* background-color: red; */
+    width: 70%;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 1rem;
+    box-sizing: border-box;
 }
 
 
@@ -182,32 +206,34 @@ html {
 }
 
 /* 1페이지 */
-.swiper-wrapper>div:nth-of-type(1) {
+/* 3부터인 이유는 앞 페이지 2개는 프로젝트 소개 */
+/* 3페이지부터 기능 구현 설명임! */
+.swiper-wrapper>div:nth-of-type(3) {
     grid-template-areas:
         "pImage1"
         "pdescription1"
     ;
 }
-.swiper-wrapper>div:nth-of-type(1) .project-image {
+.swiper-wrapper>div:nth-of-type(3) .project-image {
     grid-area: pImage1;
     background-image: url(/img/test.jpg);
 }
-.swiper-wrapper>div:nth-of-type(1) .project-description {
+.swiper-wrapper>div:nth-of-type(3) .project-description {
     grid-area: pdescription1;
 }
 
 /* 2페이지 */
-.swiper-wrapper>div:nth-of-type(2) {
+.swiper-wrapper>div:nth-of-type(4) {
     grid-template-areas:
         "pImage2"
         "pdescription2"
     ;
 }
-.swiper-wrapper>div:nth-of-type(2) .project-image {
+.swiper-wrapper>div:nth-of-type(4) .project-image {
     grid-area: pImage2;
     background-image: url(/img/kh-logo.png);
 }
-.swiper-wrapper>div:nth-of-type(2) .project-description {
+.swiper-wrapper>div:nth-of-type(4) .project-description {
     grid-area: pdescription2;
 }
 
