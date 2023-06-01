@@ -40,8 +40,6 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 .container {
-    /* width: 765px;
-    margin: 0 auto; */
     width: 100vw;
     height: 100vh;
 }
@@ -61,6 +59,17 @@ h2 {
 h3 {
     font-size: var(--font-size3);
     font-weight:400;
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+    width: 0.7rem !important;  /* 세로축 스크롤바 폭 너비 */
+    height: 0.7rem !important;  /* 가로축 스크롤바 폭 너비 */
+}
+
+/* 스크롤바 막대 */
+::-webkit-scrollbar-thumb {
+    background: var(--font) !important; /* 스크롤바 막대 색상 */
 }
 
 
@@ -204,6 +213,21 @@ h3 {
         height: 40%;
     }
 }
+
+.swiper-container {
+    /* background-color: red; */
+    width: 100%;
+    max-width: 765px;
+    height: 100vh;
+    margin: 0 auto;
+
+    overflow-y: auto;
+}
+
+
+
+
+
 
 /* 1페이지 */
 /* 3부터인 이유는 앞 페이지 2개는 프로젝트 소개 */
