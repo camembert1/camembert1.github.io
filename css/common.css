@@ -75,3 +75,13 @@
 ::-webkit-scrollbar-track {
 	background: var(--border);
 }
+
+
+
+
+
+/* 드래그 */
+::selection {
+    background-color: var(--main);
+    color: white;
+}
