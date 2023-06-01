@@ -469,8 +469,14 @@ h3 {
 }
 .project-info {
     height: 30%;
-    padding: 1rem;
-    
+    padding-left: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 0.9rem;
+    font-weight: 200;    
 }
 
 #project2-grid .project-img {
