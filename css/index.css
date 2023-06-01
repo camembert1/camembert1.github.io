@@ -132,24 +132,39 @@ h3 {
 
     cursor: pointer;
     margin-right: 1.5rem;
+
+    transition-duration: 0.3s;
 }
 .icon-img {
     height: 60%;
 }
+#github-grid .icon-img {
+    margin-top: 0.1rem;
+    margin-right: 0.1rem;
+}
 #tstory-grid .icon-img {
     height: 50%;
+    margin-top: 0.1rem;
 }
 
 /* 이메일, 깃헙, 티스토리 링크 */
-#section1-grid a {
-    /* text-decoration: none; */
+.icon-link {
+    text-decoration: underline;
+    cursor: pointer;
     font-size: var(--font-size3);
     color: var(--main);
-}
-#section1-grid a:hover {
+
     transition-duration: 0.3s;
+}
+
+
+/* hover시 바꿀 내용 */
+.icon-circle.hover {
+    background-color: var(--bg);
+    box-shadow: rgba(75, 86, 210, 0.3) 0px 5px, rgba(75, 86, 210, 0.2) 0px 10px, rgba(75, 86, 210, 0.1) 0px 15px;
+}
+.icon-link.hover {
     transform: translateY(-0.05rem);
-    color: var(--sub)
 }
 
 /* section1 grid bgColor */
@@ -527,4 +542,14 @@ h3 {
         margin-bottom: 0 !important;
     }
 
+}
+
+#yujeongLee {
+    display: flex;
+    justify-content: center;
+    font-weight: 200;
+
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--main);
 }

@@ -74,10 +74,6 @@ const changeMode = function() {
 // 페이지가 열렸을 때, theme값에 따라 테마 적용
 changeMode();
 
-// 창 크기가 바뀌었을 때, theme값에 따라 테마 적용
-// 이거 없어도 되나?
-// window.addEventListener('resize', changeMode);
-
 // 버튼을 클릭했을 때, 현재 테마가 라이트라면 다크로 반대는 반대로~
 switchBtn.addEventListener('click', function(e) {
     if (theme == 'light') {
@@ -100,11 +96,6 @@ scrollBtn.addEventListener('click', function(e) {
     });
 });
 
-// 이미 스크롤이 맨 위일 경우 버튼 숨김
-// if (window.pageYOffset === 0) {
-//     scrollBtn.style.display = "none";
-// }
-
 // 스크롤 동작 시 버튼 노출 여부 결정
 window.addEventListener("scroll", function() {
     if (window.pageYOffset === 0) {
@@ -113,3 +104,81 @@ window.addEventListener("scroll", function() {
         scrollBtn.classList.add("visible");
     }
 });
+
+
+
+
+
+
+// section1 링크 관련
+
+const iconCircles = document.querySelectorAll('.icon-circle');
+const iconLinks = document.querySelectorAll('.icon-link');
+
+for (var i = 0; i < iconCircles.length; i++) {
+    (function(index) {
+
+
+        iconCircles[index].addEventListener("click", function() {
+            clickFunc(index);
+        });
+        iconLinks[index].addEventListener("click", function() {
+            clickFunc(index);
+        });
+
+        iconCircles[index].addEventListener("mouseover", function() {
+            mouseoverFunc(index);
+        });
+        iconLinks[index].addEventListener("mouseover", function() {
+            mouseoverFunc(index);
+        });
+        
+        
+        iconCircles[index].addEventListener("mouseout", function() {
+            mouseoutFunc(index);
+        });
+        iconLinks[index].addEventListener("mouseout", function() {
+            mouseoutFunc(index);
+        });
+
+
+    })(i);
+}
+
+clickFunc = function(index) {
+    switch (index) {
+        case 0:
+            location.href='mailto:ige12091@gmail.com';
+            break;
+        case 1:
+            window.open('https://github.com/camembert1', '_blank');
+            break;
+            case 2:
+            window.open('https://github.com/camembert1', '_blank');
+            break;
+    }
+}
+
+
+
+mouseoverFunc = function(index) {
+    iconCircles[index].classList.add('hover');
+    iconLinks[index].classList.add('hover');
+
+    if (theme == 'dark') {
+        icons[index].src = icons[index].src.replace('222', 'fff');
+    } else {
+        icons[index].src = icons[index].src.replace('fff', '222');
+    }
+}
+
+mouseoutFunc = function(index) {
+    iconCircles[index].classList.remove('hover');
+    iconLinks[index].classList.remove('hover');
+
+    if (theme == 'dark') {
+        icons[index].src = icons[index].src.replace('fff', '222');
+    } else {
+        icons[index].src = icons[index].src.replace('222', 'fff');
+    }
+}

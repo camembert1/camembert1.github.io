@@ -70,7 +70,7 @@ changeMode();
 // window.addEventListener('resize', changeMode);
 
 // 버튼을 클릭했을 때, 현재 테마가 라이트라면 다크로 반대는 반대로~
-switchBtn.addEventListener('click', function(e) {
+switchBtn.addEventListener('click', function() {
     if (theme == 'light') {
         darkModeFunc();
     } else {
@@ -78,4 +78,12 @@ switchBtn.addEventListener('click', function(e) {
     }
 });
 
+
+
+// 닫기 버튼 눌렀을 때
+const closeBtn = document.querySelector('#closeBtn');
+
+closeBtn.addEventListener('click', function() {
+    window.close();
+});
 
