@@ -173,11 +173,10 @@ h3 {
 
 /* 화살표 위치 */
 .swiper-button-next, .swiper-button-prev {
-    top: calc((100vh - 3rem) * 0.7 / 2) !important;
 }
 @media (max-width:768px){
     .swiper-button-next, .swiper-button-prev {
-        top: calc((100vh - 3rem) * 0.6 + (100vh - 3rem) * 0.4 / 2) !important;
+        transform: translateY(calc(56.25vw/2 + (100vh - 3rem - 56.25vw)/4)) !important;
     }
 }
 
@@ -220,30 +219,31 @@ h3 {
 
 /* 프로젝트 소개 페이지 */
 /* bgCol */
-/* #container-section1 {background-color: red;}
+#container-section1 {background-color: red;}
 #container-section2 {background-color: orange;}
 #container-section3 {background-color: yellow;}
-#container-section4 {background-color: green;} */
+#container-section4 {background-color: green;}
 
-
+.swiper-slide:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .swiper-container {
-    /* background-color: pink; */
+    background-color: pink;
     display: grid;
     width: 100%;
     grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto;
+    grid-template-rows: 50% 50%;
     grid-template-areas:
         "cSection1 cSection2"
         "cSection3 cSection4"
     ;
 
-    width: 100%;
-    max-width: 765px;
-    height: calc((100vh - 3rem)*0.9);
-    margin: 0 auto;
-
-    /* 본문 상하단 여백 */
-    margin-block: calc(((100vh - 3rem)*0.1)/2);
+    width: 100vw;
+    height: 56.25vw;
+    max-height: calc(100vh - 3rem);
+    max-width: calc((100vh - 3rem) / 9 * 16);
 
     overflow-y: auto;
 }
@@ -259,7 +259,6 @@ h3 {
 #container-section4 {
     grid-area: cSection4;
 }
-
 @media (max-width:768px){
     .swiper-container {
         grid-template-columns: 1fr;
