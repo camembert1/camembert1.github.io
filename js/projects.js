@@ -1,3 +1,44 @@
+const $body = document.querySelector('body');
+
+// font-size, img-size 관련
+adjustSize();
+window.addEventListener('resize', adjustSize);
+
+function adjustSize() {
+    // 창 너비
+    let viewportWidth = document.documentElement.clientWidth;
+
+    adjustImgSize(viewportWidth);
+    adjustFontSize(viewportWidth);
+}
+
+function adjustImgSize(viewportWidth) {
+
+}
+function adjustFontSize(viewportWidth) {
+    // .swiper-container 태그들
+    let swiperContainers = document.querySelectorAll('.swiper-container');
+
+    for (var i = 0; i < swiperContainers.length; i++) {
+        (function(index) {
+            if (viewportWidth <= 768) {
+                // swiperContainers[index].style.fontSize = 12 + 'px';
+                $body.style.setProperty('--swiper-font-size', 12);
+            } else {
+                let sContainerWidth = swiperContainers[index].offsetWidth;
+                let fontSize = sContainerWidth * 0.012;
+                // swiperContainers[index].style.fontSize = fontSize + 'px';
+                $body.style.setProperty('--swiper-font-size', fontSize);
+            }
+        })(i);
+    }
+}
+
+
+
+
+
+
 // swiper 슬라이더
 var swiper = new Swiper(".mySwiper", {
     pagination: {
@@ -8,7 +49,7 @@ var swiper = new Swiper(".mySwiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-    // mousewheel: true,
+    mousewheel: true,
 });
 
 
@@ -21,7 +62,7 @@ var swiper = new Swiper(".mySwiper", {
 // 전체삭제
 // window.localStorage.clear();
 
-const $body = document.querySelector('body');
+// const $body = document.querySelector('body');
 const icons = document.querySelectorAll('.icon-img');
 // const switchBtn = document.querySelector('#switchBtn');
 

@@ -6,3 +6,15 @@
     letter-spacing: 0;
     font-weight: 900;
 }  */
+
+:root {
+    /* --projectColor: #28302d; */
+    --projectColor: #34443E;
+}
+
+/* .swiper-wrapper>div:first-child .deco-square {
+    background-image: url(/img/projects-img/PerfumePalette/PerfumePalette-img.png);
+    background-size: 100%;
+    background-position:  calc(var(--swiper-font-size) * 30px) 20%;
+    background-repeat: no-repeat;
+} */

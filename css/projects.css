@@ -16,6 +16,7 @@
     --font-size1: 3rem;
     --font-size2: 2.1rem;
     --font-size3: 1.2rem;
+    --swiper-font-size: 16;
 }
 
 * {
@@ -47,17 +48,16 @@ html {
     body,html {font-size:12px}
     .container {}
 }
-
 h1 {
-    font-size: var(--font-size1);
+    font-size: 3em;
     font-weight: 900;
 }
 h2 {
-    font-size: var(--font-size2);
+    font-size: 2.1em;
     font-weight: 700;
 }
 h3 {
-    font-size: var(--font-size3);
+    font-size: 1.2em;
     font-weight:400;
 }
 
@@ -138,10 +138,12 @@ h3 {
 .swiper-slide {
     text-align: center;
     background-color: var(--border);
-    display: flex;
+
+    display: flex !important;
     justify-content: center;
     align-items: center;
 }
+
 
 
 
@@ -176,7 +178,9 @@ h3 {
 }
 @media (max-width:768px){
     .swiper-button-next, .swiper-button-prev {
-        transform: translateY(calc(56.25vw/2 + (100vh - 3rem - 56.25vw)/4)) !important;
+        /* transform: translateY(calc(56.25vw/2 + (100vh - 3rem - 56.25vw)/4)) !important; */
+        top: auto !important;
+        bottom: 5vh !important;
     }
 }
 
@@ -186,66 +190,101 @@ h3 {
 
 
 /* 프로젝트 소개 본문 */
-
-/* grid bgColor */
-/* .project-image {background-color: red;}
-.project-description {background-color: orange;} */
-
-/* 공통 */
-.swiper-slide {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-}
-.project-image {
-    height: 70%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -20px;
-}
-.project-description  {
-    height: 30%;
-}
-@media (max-width:768px){
-    .project-image {
-        height: 60%;
-    }
-    .project-description {
-        height: 40%;
-    }
-}
-
-/* 프로젝트 소개 페이지 */
-/* bgCol */
-#container-section1 {background-color: red;}
-#container-section2 {background-color: orange;}
-#container-section3 {background-color: yellow;}
-#container-section4 {background-color: green;}
-
-.swiper-slide:first-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .swiper-container {
-    background-color: pink;
-    display: grid;
-    width: 100%;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    grid-template-areas:
-        "cSection1 cSection2"
-        "cSection3 cSection4"
-    ;
+    font-size: calc(var(--swiper-font-size) * 1px);
+    overflow-y: auto;
 
     width: 100vw;
     height: 56.25vw;
     max-height: calc(100vh - 3rem);
     max-width: calc((100vh - 3rem) / 9 * 16);
+    min-width: 768px;
 
-    overflow-y: auto;
+    background-color: var(--bg);
+    box-sizing: border-box;
+
+    position: relative;
+}
+@media (max-width:768px){
+    .swiper-container {
+        width: 100vw;
+        height: calc(100vh - 3rem);
+        min-width: 320px;
+    }
+}
+
+
+/* 소개 페이지 꾸미기 영역 */
+.swiper-container>:not(.deco-area) {
+    position: relative;
+}
+.deco-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 432px;
+
+    overflow: hidden;
+}
+
+/* 소개 페이지 꾸미기 영역 - 1페이지 적용 */
+.swiper-wrapper>div:first-child .deco-area {
+    background-color: var(--projectColor);
+    opacity: 0.8;
+}
+.swiper-wrapper>div:first-child .deco-square {
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--bg);
+
+    box-sizing: border-box;
+    border: calc(var(--swiper-font-size) * 1px) solid var(--projectColor);
+    border-radius: calc(var(--swiper-font-size) * 2px);
+}
+
+/* 소개 페이지 꾸미기 영역 - 2페이지 이후 적용 */
+.swiper-wrapper>div:not(:first-child) .deco-square {
+
+    width: calc(var(--swiper-font-size) * 2px / 12 * 1000);
+    height: calc(var(--swiper-font-size) * 1px / 12 * 1000 / 16 * 6);
+
+    background-color: var(--projectColor);
+    opacity: 0.8;
+}
+@media (max-width:768px){
+    .deco-area {
+        display: none;
+    }
+}
+
+
+/* 1페이지 : 프로젝트 설명 */
+/* bgCol */
+/* #container-section1 {background-color: red;}
+#container-section2 {background-color: orange;}
+#container-section3 {background-color: yellow;} */
+
+.swiper-wrapper>div:first-child .swiper-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "cSection1 cSection3"
+        "cSection2 cSection3"
+    ;
+}
+[id*=container-section] {
+    min-height: 216px;
+
+    padding: calc(var(--swiper-font-size) * 2px);
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 #container-section1 {
     grid-area: cSection1;
@@ -256,57 +295,108 @@ h3 {
 #container-section3 {
     grid-area: cSection3;
 }
-#container-section4 {
-    grid-area: cSection4;
-}
 @media (max-width:768px){
-    .swiper-container {
+    .swiper-wrapper>div:first-child .swiper-container  {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas:
             "cSection1"
             "cSection2"
             "cSection3"
-            "cSection4"
         ;
+    }
+    [id*=container-section] {
+        min-height: 216px;
+    }
+}
+
+
+/* 2페이지 ~ 끝 (공통!) : 이미지 + 설명 */
+.swiper-wrapper>div:not(:first-child) .swiper-container {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+.project-image {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--bg);
+    
+    /* box-sizing: border-box; */
+    width: calc(var(--swiper-font-size) * 10px * 4);
+    height: calc(var(--swiper-font-size) * 10px * 3);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+
+}
+.project-description {
+    height: 200px;
+    box-sizing: border-box;
+}
+@media (max-width:768px){
+    .swiper-wrapper>div:not(:first-child) .swiper-container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .project-image {
+        width: 100%;
+        height: calc((100vh - 3rem) * 0.6);
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -20px;
+    }
+    .project-description  {
+        height: auto;
+    }
+}
+
+
+/* 2페이지 - ERD*/
+.swiper-wrapper>div:nth-of-type(2) .swiper-container {
+
+}
+.swiper-wrapper>div:nth-of-type(2) .project-image {
+    background-image: url(/img/test.jpg);
+}
+@media (max-width:768px){
+    .swiper-wrapper>div:nth-of-type(2) .swiper-container {
+        grid-template-areas:
+            "pImage2"
+            "pdescription2"
+        ;
+    }
+    .swiper-wrapper>div:nth-of-type(2) .project-image {
+        grid-area: pImage2;
+    }
+    .swiper-wrapper>div:nth-of-type(2) .project-description {
+        grid-area: pdescription2;
+    }
+}
+
+
+/* 3페이지 - 구현 기능(1)*/
+.swiper-wrapper>div:nth-of-type(3) .swiper-container {
+
+}
+.swiper-wrapper>div:nth-of-type(3) .project-image {
+    background-image: url(/img/kh-logo.png);
+}
+@media (max-width:768px){
+    .swiper-wrapper>div:nth-of-type(3) .swiper-container {
+        grid-template-areas:
+            "pImage3"
+            "pdescription3"
+        ;
+    }
+    .swiper-wrapper>div:nth-of-type(3) .project-image {
+        grid-area: pImage3;
+    }
+    .swiper-wrapper>div:nth-of-type(3) .project-description {
+        grid-area: pdescription3;
     }
 }
 
 
 
-
-
-
-/* 기능 구현 1페이지 */
-/* 3부터인 이유는 앞 페이지 2개는 프로젝트 소개 */
-/* 3페이지부터 기능 구현 설명임! */
-.swiper-wrapper>div:nth-of-type(3) {
-    grid-template-areas:
-        "pImage1"
-        "pdescription1"
-    ;
-}
-.swiper-wrapper>div:nth-of-type(3) .project-image {
-    grid-area: pImage1;
-    background-image: url(/img/test.jpg);
-}
-.swiper-wrapper>div:nth-of-type(3) .project-description {
-    grid-area: pdescription1;
-}
-
-/* 2페이지 */
-.swiper-wrapper>div:nth-of-type(4) {
-    grid-template-areas:
-        "pImage2"
-        "pdescription2"
-    ;
-}
-.swiper-wrapper>div:nth-of-type(4) .project-image {
-    grid-area: pImage2;
-    background-image: url(/img/kh-logo.png);
-}
-.swiper-wrapper>div:nth-of-type(4) .project-description {
-    grid-area: pdescription2;
-}
 
 

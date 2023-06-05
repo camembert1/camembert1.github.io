@@ -6,3 +6,15 @@
     letter-spacing: 0;
     font-weight: 900;
 } */
+
+:root {
+    /* --projectColor: #332a1a; */
+    --projectColor: #4E422D;
+}
+
+/* .swiper-wrapper>div:first-child .deco-square {
+    background-image: url(/img/projects-img/ZOOTOPIA/ZOOTOPIA-img.png);
+    background-size: 30%;
+    background-position:  99% 95%;
+    background-repeat: no-repeat;
+} */
