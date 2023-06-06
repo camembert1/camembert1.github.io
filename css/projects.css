@@ -365,14 +365,32 @@ h3 {
         padding-block: 2rem;
         padding-inline: 3rem;
 
+        align-items: center;
+        justify-content: center;
+
     }
     #container-section1 {
+    } #container-section1>div {
+        flex-direction: column;
+    } #container-section1>div>h2 {
+        display: block;
     }
+
     #container-section2 {
-        justify-content: flex-start;
+    } #container-section2>div {
+        /* 개발환경 아래 내용들 */
+        flex-direction: column;
+    } #container-section2>div>h3:nth-child(1) {
+        display: block;    
     }
+
+
+
     #container-section3 {
-        justify-content: flex-start;
+        /* justify-content: flex-start; */
+    } #container-section3>div {
+        align-items: center;
+        text-align: center;
     }
     #container-section3 #role {
         margin-bottom: 2rem;
