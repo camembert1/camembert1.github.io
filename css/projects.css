@@ -12,6 +12,9 @@
     --font: #222;
     --border: #efefef;
 
+    --transparency: #ffffff55;
+    --transparencyReversal: #22222255
+
     /* font-size */
     --font-size1: 3rem;
     --font-size2: 2.1rem;
@@ -55,6 +58,9 @@ html {
 h1 {
     font-size: 3em;
     font-weight: 900;
+
+    color: var(--projectColor);
+    /* text-shadow: 0 0 calc(var(--swiper-font-size) * 1px * 0.5) var(--transparencyReversal); */
 }
 h2 {
     font-size: 1.5em;
@@ -73,7 +79,7 @@ h3 {
 
 /* 스크롤바 막대 */
 ::-webkit-scrollbar-thumb {
-    background: var(--font) !important; /* 스크롤바 막대 색상 */
+    background: var(--projectColor) !important; /* 스크롤바 막대 색상 */
 }
 
 
@@ -151,7 +157,7 @@ h3 {
 
 
 
-/* Swiper 디자인 변경 */
+/* Swiper radius디자인 변경 */
 :root {
     --swiper-theme-color: var(--main);
     --swiper-navigation-color: var(--main);
@@ -159,7 +165,7 @@ h3 {
 }
 
 /* 화살표 디자인 */
-.swiper-button-next::after, .swiper-button-prev::after {
+/* .swiper-button-next::after, .swiper-button-prev::after {
     content: '' !important;
 }
 .swiper-button-next {
@@ -175,6 +181,23 @@ h3 {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+} */
+
+/* 화살표 디자인2 */
+.swiper-button-next::after, .swiper-button-prev::after {
+    color: var(--projectColor);
+    text-shadow: 0 0 calc(var(--swiper-font-size) * 1px * 0.5) var(--transparencyReversal);
+    font-weight: 900;
+    /* opacity: 0.8; */
+    font-size: calc(var(--swiper-font-size) * 3px) !important;
+}
+.swiper-button-next, .swiper-button-prev {
+    padding-inline: 1em !important;
+}
+@media (max-width:768px) {
+    .swiper-button-next, .swiper-button-prev {
+        /* padding-inline: 0.2em !important; */
+    }
 }
 
 /* 화살표 위치 */
@@ -245,7 +268,7 @@ h3 {
 
     box-sizing: border-box;
     border: calc(var(--swiper-font-size) * 1px) solid var(--projectColor);
-    border-radius: calc(var(--swiper-font-size) * 2px);
+    /* border-radius: calc(var(--swiper-font-size) * 2px); */
 }
 
 /* 소개 페이지 꾸미기 영역 - 2페이지 이후 적용 */
@@ -290,6 +313,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
 }
 
 #container-section1 {
@@ -336,12 +360,16 @@ h3 {
     grid-area: cSection3;
     justify-content: space-around;
 } #container-section3>div {
-    display: flex;
     flex-direction: column;
+    display: flex;
     align-items: flex-start;
     text-align: left;
 } #container-section3>div>h2 {
     margin-bottom: calc(var(--swiper-font-size) * 1.5px);
+}
+/* for blur */
+#container-section3>div>h2, #container-section3>div>h3 {
+    background-color: var(--transparency);
 }
 
 @media (max-width:768px){
@@ -385,12 +413,12 @@ h3 {
     }
 
 
-
     #container-section3 {
         /* justify-content: flex-start; */
     } #container-section3>div {
         align-items: center;
         text-align: center;
+        width: 70vw;
     }
     #container-section3 #role {
         margin-bottom: 2rem;
@@ -398,90 +426,7 @@ h3 {
 }
 
 
-/* 2페이지 ~ 끝 (공통!) : 이미지 + 설명 */
-.swiper-wrapper>div:not(:first-child) .swiper-container {
-    display: flex;
-    align-items: center;
-    /* justify-content: space-around; */
-}
-.project-image {
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: var(--bg);
-    
-    /* box-sizing: border-box; */
-    width: calc(var(--swiper-font-size) * 10px * 4);
-    height: calc(var(--swiper-font-size) * 10px * 3);
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 
-}
-.project-description {
-    height: 200px;
-    box-sizing: border-box;
-}
-@media (max-width:768px){
-    .swiper-wrapper>div:not(:first-child) .swiper-container {
-        display: grid;
-        width: 100%;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
-    .project-image {
-        width: 100%;
-        height: calc((100vh - 3rem) * 0.6);
-        box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -20px;
-    }
-    .project-description  {
-        height: auto;
-    }
-}
-
-
-/* 2페이지 - ERD*/
-.swiper-wrapper>div:nth-of-type(2) .swiper-container {
-
-}
-.swiper-wrapper>div:nth-of-type(2) .project-image {
-    background-image: url(/img/test.jpg);
-}
-@media (max-width:768px){
-    .swiper-wrapper>div:nth-of-type(2) .swiper-container {
-        grid-template-areas:
-            "pImage2"
-            "pdescription2"
-        ;
-    }
-    .swiper-wrapper>div:nth-of-type(2) .project-image {
-        grid-area: pImage2;
-    }
-    .swiper-wrapper>div:nth-of-type(2) .project-description {
-        grid-area: pdescription2;
-    }
-}
-
-
-/* 3페이지 - 구현 기능(1)*/
-.swiper-wrapper>div:nth-of-type(3) .swiper-container {
-
-}
-.swiper-wrapper>div:nth-of-type(3) .project-image {
-    background-image: url(/img/kh-logo.png);
-}
-@media (max-width:768px){
-    .swiper-wrapper>div:nth-of-type(3) .swiper-container {
-        grid-template-areas:
-            "pImage3"
-            "pdescription3"
-        ;
-    }
-    .swiper-wrapper>div:nth-of-type(3) .project-image {
-        grid-area: pImage3;
-    }
-    .swiper-wrapper>div:nth-of-type(3) .project-description {
-        grid-area: pdescription3;
-    }
-}
 
 
 
