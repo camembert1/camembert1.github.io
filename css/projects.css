@@ -17,6 +17,9 @@
     --font-size2: 2.1rem;
     --font-size3: 1.2rem;
     --swiper-font-size: 16;
+
+    /* duration time */
+    --duration: 0.5s
 }
 
 * {
@@ -36,6 +39,7 @@ html {
     word-break: keep-all;
     /* overflow-x: hidden; */
     overflow: hidden;
+    transition-duration: var(--duration);
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -53,7 +57,7 @@ h1 {
     font-weight: 900;
 }
 h2 {
-    font-size: 2.1em;
+    font-size: 1.5em;
     font-weight: 700;
 }
 h3 {
@@ -279,26 +283,72 @@ h3 {
 [id*=container-section] {
     min-height: 216px;
 
-    padding: calc(var(--swiper-font-size) * 2px);
+    padding-block: calc(var(--swiper-font-size) * 3px);
+    padding-inline: calc(var(--swiper-font-size) * 4px);
     box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
+
 #container-section1 {
     grid-area: cSection1;
+} #container-section1>h2 { 
+    /* 프로젝트 간단 소개 */
+    opacity: 0.5;
+    margin-bottom: calc(var(--swiper-font-size) * 2px);
+} #container-section1>div {
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    margin-block: calc(var(--swiper-font-size) * 0.5px);
+} #container-section1>div>h2 {
+    /* background-color: red; */
+    width: calc(var(--swiper-font-size) * 10px);
+    display: flex;
+} #container-section1 #github-url a {
+    /* text-decoration: underline; */
+    /* cursor: pointer; */
+    color: var(--main);
 }
+
 #container-section2 {
     grid-area: cSection2;
+    justify-content: flex-end;
+} #container-section2>h2 {
+    /* 개발환경txt */
+    margin-bottom: calc(var(--swiper-font-size) * 1.5px);
+} #container-section2>div {
+    /* 개발환경 아래 내용들 */
+    display: flex;
+    align-items: center;
+    margin-block: calc(var(--swiper-font-size) * 0.5px);
+} #container-section2>div>h3:nth-child(1) {
+    /* background-color: red; */
+    width: calc(var(--swiper-font-size) * 10px);
+    display: flex;
+
+    font-weight: 600;
 }
+
 #container-section3 {
     grid-area: cSection3;
+    justify-content: space-around;
+} #container-section3>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+} #container-section3>div>h2 {
+    margin-bottom: calc(var(--swiper-font-size) * 1.5px);
 }
+
 @media (max-width:768px){
     .swiper-wrapper>div:first-child .swiper-container  {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        /* grid-template-rows: 18rem 20rem 28rem; */
+        grid-template-rows: min-content min-content min-content;
         grid-template-areas:
             "cSection1"
             "cSection2"
@@ -306,7 +356,26 @@ h3 {
         ;
     }
     [id*=container-section] {
-        min-height: 216px;
+        min-height: min-content;
+        border-bottom: 1px solid var(--border);
+
+        padding: 0;
+        margin: 0;
+
+        padding-block: 2rem;
+        padding-inline: 3rem;
+
+    }
+    #container-section1 {
+    }
+    #container-section2 {
+        justify-content: flex-start;
+    }
+    #container-section3 {
+        justify-content: flex-start;
+    }
+    #container-section3 #role {
+        margin-bottom: 2rem;
     }
 }
 
