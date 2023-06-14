@@ -1,17 +1,19 @@
 const $body = document.querySelector('body');
 
 // 이미지 모달
+const modal = document.querySelector('#modal');
+modal.addEventListener('click', function(){
+    this.style.display = 'none';
+});
+
 const projectImgs = document.querySelectorAll('.project-image');
-for (var i = 0; i < projectImgs.length; i++) {
-    (function(index) {
-
-        projectImgs[index].addEventListener("click", function() {
-            var backgroundImage = window.getComputedStyle(projectImgs[index]).getPropertyValue("background-image");
-            console.log(backgroundImage);
-
-        });
-
-    })(i);
+const modalImg = document.querySelector('#modal-image');
+for (let i = 0; i < projectImgs.length; i++) {
+    projectImgs[i].addEventListener("click", function() {
+        let bgImgUrl = window.getComputedStyle(this).getPropertyValue("background-image");
+        modalImg.style.backgroundImage = bgImgUrl;
+        modal.style.display = 'block';
+    });
 }
 
 
