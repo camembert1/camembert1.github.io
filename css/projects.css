@@ -79,7 +79,7 @@ h3 {
 
 /* 스크롤바 막대 */
 ::-webkit-scrollbar-thumb {
-    background: var(--projectColor) !important; /* 스크롤바 막대 색상 */
+    background: var(--main) !important; /* 스크롤바 막대 색상 */
 }
 
 

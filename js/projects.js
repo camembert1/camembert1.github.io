@@ -1,5 +1,25 @@
 const $body = document.querySelector('body');
 
+// 이미지 모달
+const projectImgs = document.querySelectorAll('.project-image');
+for (var i = 0; i < projectImgs.length; i++) {
+    (function(index) {
+
+        projectImgs[index].addEventListener("click", function() {
+            var backgroundImage = window.getComputedStyle(projectImgs[index]).getPropertyValue("background-image");
+            console.log(backgroundImage);
+
+        });
+
+    })(i);
+}
+
+
+
+
+
+
+
 // font-size, img-size 관련
 adjustSize();
 window.addEventListener('resize', adjustSize);
