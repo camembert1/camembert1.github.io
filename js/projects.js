@@ -98,8 +98,8 @@ const darkModeFunc = function() {
     $body.style.setProperty('--bg', '#222');
     $body.style.setProperty('--font', '#fff');
     $body.style.setProperty('--border', '#484848');
-    $body.style.setProperty('--transparency', '#22222255');
-    $body.style.setProperty('--transparencyReversal', '#ffffff55');
+    $body.style.setProperty('--transparency', '#22222295');
+    $body.style.setProperty('--transparencyReversal', '#ffffff95');
     
     // 상태는 다크모드로 바꾸고 라이트 모드로 변경하는 버튼 노출
     window.localStorage.setItem('theme', 'dark');
@@ -112,8 +112,8 @@ const lightModeFunc = function() {
     $body.style.setProperty('--bg', '#fff');
     $body.style.setProperty('--font', '#222');
     $body.style.setProperty('--border', '#efefef');
-    $body.style.setProperty('--transparency', '#ffffff55');
-    $body.style.setProperty('--transparencyReversal', '#22222255');
+    $body.style.setProperty('--transparency', '#ffffff95');
+    $body.style.setProperty('--transparencyReversal', '#22222295');
     
     window.localStorage.setItem('theme', 'light');
     theme =  window.localStorage.getItem('theme');

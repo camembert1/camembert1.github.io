@@ -15,8 +15,10 @@
 /* 1페이지 배경 */
 .swiper-wrapper>div:first-child .deco-square {
     background-image: url(/img/projects-img/PerfumePalette/PerfumePalette-img.png);
-    background-size: 100%;
-    background-position:  calc(var(--swiper-font-size) * 30px) 20%;
+    /* background-size: 100%;
+    background-position:  calc(var(--swiper-font-size) * 30px) 20%; */
+    background-size: 60%;
+    background-position:  150% -200%;
     background-repeat: no-repeat;
 }
 
@@ -24,6 +26,11 @@
 /* 2페이지 - ERD */
 .swiper-wrapper>div:nth-of-type(2) .project-image {
     background-image: url(/img/projects-img/PerfumePalette/Perfume_Palette_ERD.png);
+}
+
+
+.pMargin {
+    margin-top: calc(var(--swiper-font-size) * 0.3px);
 }
 
 
@@ -57,7 +64,7 @@
     text-align: left;
 
     position: absolute;
-    top: calc(var(--swiper-font-size) * 27px);
+    top: calc(var(--swiper-font-size) * 26.7px);
 	left: calc(var(--swiper-font-size) * -9px);
     margin-left: 4.6em;
 }
@@ -129,7 +136,7 @@
     text-align: left;
 
     position: absolute;
-    top: calc(var(--swiper-font-size) * 29px);
+    top: calc(var(--swiper-font-size) * 28.7px);
 	left: calc(var(--swiper-font-size) * -9px);
     margin-left: 4.6em;
 }
@@ -181,7 +188,7 @@
     text-align: left;
 
     position: absolute;
-    top: calc(var(--swiper-font-size) * 22px);
+    top: calc(var(--swiper-font-size) * 21.7px);
 	left: calc(var(--swiper-font-size) * -9px);
     /* margin-left: 4.6em; */
 }
@@ -233,7 +240,7 @@
     text-align: left;
 
     position: absolute;
-    top: calc(var(--swiper-font-size) * 22px);
+    top: calc(var(--swiper-font-size) * 21.7px);
 	left: calc(var(--swiper-font-size) * -9px);
     /* margin-left: 4.6em; */
 }
@@ -258,7 +265,203 @@
     }
     .swiper-wrapper>div:nth-of-type(6) .project-description .txt-sub {
         text-align: center;
-        position: static; ㅠ 
+        position: static; 
+        margin-left: 0;
+    }
+}
+
+
+/* 7페이지 - 구현 기능(5) 주문서 및 결제 (1) */
+.swiper-wrapper>div:nth-of-type(7) .project-image.img1 {
+    background-image: url(/img/projects-img/PerfumePalette/5-1.jpg);
+    
+}
+.swiper-wrapper>div:nth-of-type(7) .project-image.img2 {
+    background-image: url(/img/projects-img/PerfumePalette/5-2.gif);
+    width: calc(var(--swiper-font-size) * 10px);
+    height: calc(var(--swiper-font-size) * 10px);
+
+    position: absolute;
+	left: calc(var(--swiper-font-size) * 50px);
+    top: calc(var(--swiper-font-size) * 1px / 12 * 1000 / 16 * 4.5);
+    transform: translateY(-50%);
+}
+.swiper-wrapper>div:nth-of-type(7) .project-image.img3 {
+    background-image: url(/img/projects-img/PerfumePalette/5-3.gif);
+    width: calc(var(--swiper-font-size) * 10px);
+    height: calc(var(--swiper-font-size) * 10px);
+
+    position: absolute;
+	left: calc(var(--swiper-font-size) * 62px);
+    top: calc(var(--swiper-font-size) * 1px / 12 * 1000 / 16 * 4.5);
+    transform: translateY(-50%);
+}
+
+.swiper-wrapper>div:nth-of-type(7) .project-description {
+    position: absolute;
+    top: calc(var(--swiper-font-size) * 5px);
+	right: calc(var(--swiper-font-size) * 5px);
+}
+
+.swiper-wrapper>div:nth-of-type(7) .project-description .txt-main {
+    display: flex;
+    flex-direction: column;
+}
+.swiper-wrapper>div:nth-of-type(7) .project-description .txt-sub {
+    color: var(--font);
+    text-align: left;
+
+    position: absolute;
+    top: calc(var(--swiper-font-size) * 25px);
+	left: calc(var(--swiper-font-size) * -10px);
+    /* margin-left: 4.6em; */
+}
+@media (max-width:768px){
+    .swiper-wrapper>div:nth-of-type(7) .swiper-container {
+        grid-template-areas:
+            "pImage3"
+            "pdescription3"
+        ;
+    }
+    .swiper-wrapper>div:nth-of-type(7) .project-image {
+        grid-area: pImage3;
+    }
+    .swiper-wrapper>div:nth-of-type(7) .project-description {
+        grid-area: pdescription3;
+        position: static;
+    }
+
+    .swiper-wrapper>div:nth-of-type(7) .project-description .textStyle2>div:nth-of-type(1) {
+        /* flex-direction: row; */
+        justify-content: center;
+    }
+    .swiper-wrapper>div:nth-of-type(7) .project-description .txt-sub {
+        text-align: center;
+        position: static;
+        margin-left: 0;
+    }
+}
+
+
+/* 8페이지 - 구현 기능(6) 주문서 및 결제 (2) */
+.swiper-wrapper>div:nth-of-type(8) .project-image.img1 {
+    background-image: url(/img/projects-img/PerfumePalette/6-1.jpg);
+    
+}
+.swiper-wrapper>div:nth-of-type(8) .project-image.img2 {
+    background-image: url(/img/projects-img/PerfumePalette/6-2.gif);
+    width: calc(var(--swiper-font-size) * 13.3px);
+    height: calc(var(--swiper-font-size) * 10px);
+
+    position: absolute;
+	left: calc(var(--swiper-font-size) * 50px);
+    top: calc(var(--swiper-font-size) * 1px / 12 * 1000 / 16 * 4.5);
+    transform: translateY(-50%);
+}
+.swiper-wrapper>div:nth-of-type(8) .project-image.img3 {
+    background-image: url(/img/projects-img/PerfumePalette/6-3.jpg);
+    width: calc(var(--swiper-font-size) * 10px);
+    height: calc(var(--swiper-font-size) * 10px);
+
+    position: absolute;
+	left: calc(var(--swiper-font-size) * 65.3px);
+    top: calc(var(--swiper-font-size) * 1px / 12 * 1000 / 16 * 4.5);
+    transform: translateY(-50%);
+}
+
+.swiper-wrapper>div:nth-of-type(8) .project-description {
+    position: absolute;
+    top: calc(var(--swiper-font-size) * 5px);
+	right: calc(var(--swiper-font-size) * 5px);
+}
+
+.swiper-wrapper>div:nth-of-type(8) .project-description .txt-main {
+    display: flex;
+    flex-direction: column;
+}
+.swiper-wrapper>div:nth-of-type(8) .project-description .txt-sub {
+    color: var(--font);
+    text-align: left;
+
+    position: absolute;
+    top: calc(var(--swiper-font-size) * 26.5px);
+	left: calc(var(--swiper-font-size) * -10px);
+    /* margin-left: 4.6em; */
+}
+@media (max-width:768px){
+    .swiper-wrapper>div:nth-of-type(8) .swiper-container {
+        grid-template-areas:
+            "pImage3"
+            "pdescription3"
+        ;
+    }
+    .swiper-wrapper>div:nth-of-type(8) .project-image {
+        grid-area: pImage3;
+    }
+    .swiper-wrapper>div:nth-of-type(8) .project-description {
+        grid-area: pdescription3;
+        position: static;
+    }
+
+    .swiper-wrapper>div:nth-of-type(8) .project-description .textStyle2>div:nth-of-type(1) {
+        /* flex-direction: row; */
+        justify-content: center;
+    }
+    .swiper-wrapper>div:nth-of-type(8) .project-description .txt-sub {
+        text-align: center;
+        position: static;
+        margin-left: 0;
+    }
+}
+
+
+/* 9페이지 - 구현 기능(7) 알림 */
+.swiper-wrapper>div:nth-of-type(9) .project-image.img1 {
+    background-image: url(/img/projects-img/PerfumePalette/7-1.gif);
+    
+}
+
+.swiper-wrapper>div:nth-of-type(9) .project-description {
+    position: absolute;
+    top: calc(var(--swiper-font-size) * 5px);
+	right: calc(var(--swiper-font-size) * 5px);
+}
+
+.swiper-wrapper>div:nth-of-type(9) .project-description .txt-main {
+    display: flex;
+    flex-direction: column;
+}
+.swiper-wrapper>div:nth-of-type(9) .project-description .txt-sub {
+    color: var(--font);
+    text-align: left;
+
+    position: absolute;
+    top: calc(var(--swiper-font-size) * 21.7px);
+	left: calc(var(--swiper-font-size) * -16.5px);
+    /* margin-left: 4.6em; */
+}
+@media (max-width:768px){
+    .swiper-wrapper>div:nth-of-type(9) .swiper-container {
+        grid-template-areas:
+            "pImage3"
+            "pdescription3"
+        ;
+    }
+    .swiper-wrapper>div:nth-of-type(9) .project-image {
+        grid-area: pImage3;
+    }
+    .swiper-wrapper>div:nth-of-type(9) .project-description {
+        grid-area: pdescription3;
+        position: static;
+    }
+
+    .swiper-wrapper>div:nth-of-type(9) .project-description .textStyle2>div:nth-of-type(1) {
+        /* flex-direction: row; */
+        justify-content: center;
+    }
+    .swiper-wrapper>div:nth-of-type(9) .project-description .txt-sub {
+        text-align: center;
+        position: static;
         margin-left: 0;
     }
 }
