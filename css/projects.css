@@ -532,6 +532,15 @@ h3 {
     top: calc(var(--swiper-font-size) * 19px);
 	left: calc(var(--swiper-font-size) * 48.3px);
 }
+.swiper-wrapper>div:nth-of-type(2) .project-description .txt-sub {
+    color: var(--font);
+    text-align: left;
+
+    width: calc(var(--swiper-font-size) * 30px);
+
+    position: absolute;
+    top: calc(var(--swiper-font-size) * 6px);
+}
 @media (max-width:768px){
     .swiper-wrapper>div:nth-of-type(2) .swiper-container {
         grid-template-areas:
@@ -545,6 +554,10 @@ h3 {
     .swiper-wrapper>div:nth-of-type(2) .project-description {
         grid-area: pdescription2;
         position: static;
+    }
+    .swiper-wrapper>div:nth-of-type(2) .project-description .txt-sub {
+        position: static;
+        text-align: center;
     }
 }
 

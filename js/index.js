@@ -154,7 +154,7 @@ clickFunc = function(index) {
             window.open('https://github.com/camembert1', '_blank');
             break;
             case 2:
-            window.open('https://github.com/camembert1', '_blank');
+            window.open('https://camembert1.tistory.com/', '_blank');
             break;
     }
 }
