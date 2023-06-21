@@ -124,7 +124,7 @@
 .swiper-wrapper>div:nth-of-type(4) .project-description {
     position: absolute;
     top: calc(var(--swiper-font-size) * 5px);
-	left: calc(var(--swiper-font-size) * 52.8px);
+	right: calc(var(--swiper-font-size) * 5px);
 }
 
 .swiper-wrapper>div:nth-of-type(4) .project-description .txt-main {
@@ -137,8 +137,7 @@
 
     position: absolute;
     top: calc(var(--swiper-font-size) * 28.7px);
-	left: calc(var(--swiper-font-size) * -9px);
-    margin-left: 4.6em;
+	left: calc(var(--swiper-font-size) * -5.8px);
 }
 @media (max-width:768px){
     .swiper-wrapper>div:nth-of-type(4) .swiper-container {
